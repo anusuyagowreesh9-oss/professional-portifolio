@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Professional Portfolio Website">
+<meta name="keywords" content="Portfolio, Web Developer, HTML, CSS">
+<meta name="author" content="Your Name">
+
+<title>Professional Portfolio</title>
+
+<style>
+:root{
+    --bg:#f5f7fa;
+    --text:#222;
+    --card:#ffffff;
+    --primary:#2563eb;
+    --shadow:0 10px 25px rgba(0,0,0,0.1);
+}
+
+.dark{
+    --bg:#121212;
+    --text:#ffffff;
+    --card:#1e1e1e;
+    --primary:#60a5fa;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    transition:.3s;
+}
+
+/* Header */
+header{
+    background:var(--primary);
+    color:white;
+    padding:1rem 2rem;
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+nav ul{
+    display:flex;
+    gap:20px;
+    list-style:none;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.theme-btn{
+    padding:8px 12px;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+/* Hero */
+.hero{
+    min-height:90vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+    background:linear-gradient(135deg,#2563eb,#7c3aed);
+    color:white;
+}
+
+.hero h1{
+    font-size:3rem;
+}
+
+.hero p{
+    margin:15px 0;
+}
+
+.btn{
+    display:inline-block;
+    padding:12px 20px;
+    background:white;
+    color:#2563eb;
+    text-decoration:none;
+    border-radius:30px;
+    font-weight:bold;
+}
+
+/* Sections */
+section{
+    padding:60px 20px;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+/* About */
+.about{
+    max-width:900px;
+    margin:auto;
+    text-align:center;
+}
+
+/* Skills */
+.skills-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:20px;
+}
+
+.skill{
+    background:var(--card);
+    padding:20px;
+    border-radius:15px;
+    box-shadow:var(--shadow);
+    text-align:center;
+    transition:.3s;
+}
+
+.skill:hover{
+    transform:translateY(-10px);
+}
+
+/* Projects */
+.projects{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:var(--card);
+    padding:20px;
+    border-radius:15px;
+    box-shadow:var(--shadow);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:scale(1.03);
+}
+
+/* Contact */
+form{
+    max-width:600px;
+    margin:auto;
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+input,textarea{
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:8px;
+}
+
+button{
+    padding:12px;
+    background:var(--primary);
+    color:white;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+/* Footer */
+footer{
+    text-align:center;
+    padding:20px;
+    background:var(--primary);
+    color:white;
+}
+
+/* Responsive */
+@media(max-width:768px){
+    nav{
+        flex-direction:column;
+        gap:10px;
+    }
+
+    .hero h1{
+        font-size:2rem;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<nav aria-label="Main Navigation">
+<h2>My Portfolio</h2>
+
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+<button class="theme-btn" onclick="toggleTheme()">
+🌙 Theme
+</button>
+</nav>
+</header>
+
+<main>
+
+<section class="hero">
+<div>
+<h1>Hello, I'm Anusuya</h1>
+<p>Web Developer | Front-End Enthusiast | Student</p>
+<a href="#projects" class="btn">View Projects</a>
+</div>
+</section>
+
+<section id="about">
+<h2 class="section-title">About Me</h2>
+<div class="about">
+<p>
+I am passionate about web development and creating responsive,
+accessible, and user-friendly websites using modern web technologies.
+</p>
+</div>
+</section>
+
+<section id="skills">
+<h2 class="section-title">Skills</h2>
+
+<div class="skills-grid">
+<div class="skill">HTML5</div>
+<div class="skill">CSS3</div>
+<div class="skill">JavaScript</div>
+<div class="skill">Python</div>
+<div class="skill">Java</div>
+<div class="skill">Responsive Design</div>
+</div>
+</section>
+
+<section id="projects">
+<h2 class="section-title">Projects</h2>
+
+<div class="projects">
+
+<div class="card">
+<h3>Portfolio Website</h3>
+<p>Responsive personal portfolio using HTML and CSS.</p>
+</div>
+
+<div class="card">
+<h3>To-Do List App</h3>
+<p>Task management application built with JavaScript.</p>
+</div>
+
+<div class="card">
+<h3>Calculator</h3>
+<p>Simple calculator performing arithmetic operations.</p>
+</div>
+
+</div>
+</section>
+
+<section id="contact">
+<h2 class="section-title">Contact Me</h2>
+
+<form aria-label="Contact Form">
+<input type="text" placeholder="Your Name" required>
+<input type="email" placeholder="Your Email" required>
+<textarea rows="5" placeholder="Your Message" required></textarea>
+<button type="submit">Send Message</button>
+</form>
+</section>
+
+</main>
+
+<footer>
+<p>© 2026 Anusuya Portfolio. All Rights Reserved.</p>
+</footer>
+
+<script>
+function toggleTheme(){
+    document.body.classList.toggle("dark");
+}
+</script>
+
+</body>
+</html>
